@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Car Price Prediction</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .background {
+            background: url("https://images.pexels.com/photos/39811/pexels-photo-39811.jpeg?") no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(4px);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 450px;
+            background-color: rgba(0, 0, 0, 0.65);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            color: #fff;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #f1c40f;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            box-shadow: 0 0 5px #f1c40f;
+        }
+
+        button {
+            background-color: #f1c40f;
+            color: #000;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s ease;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #d4ac0d;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #2ecc71;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="container">
+            <h2>🚗 Car Price Prediction</h2>
+            <form action="/predict" method="post">
+                <input type="text" name="name" placeholder="Car Name" required />
+                <input type="text" name="company" placeholder="Company" required />
+                <input type="number" name="year" placeholder="Year" required />
+                <input type="number" name="kms_driven" placeholder="Kilometers Driven" required />
+                <select name="fuel_type" required>
+                    <option value="" disabled selected>Select Fuel Type</option>
+                    <option value="Petrol">Petrol</option>
+                    <option value="Diesel">Diesel</option>
+                    <option value="CNG">CNG</option>
+                    <option value="Electric">Electric</option>
+                </select>
+                <button type="submit">Predict Price</button>
+            </form>
+            <h3 id="result">{{ prediction_text }}</h3>
+        </div>
+    </div>
+</body>
+</html>
