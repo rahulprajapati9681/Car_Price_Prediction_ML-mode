@@ -11,15 +11,15 @@ Dataset: Contains information like car name, company, year of purchase, kms driv
 # 🧠 Features Used
 The following features are used to train the model:
 
-name: Car name/model
+- name: Car name/model
 
-company: Manufacturer
+- company: Manufacturer
 
-year: Year of purchase
+- year: Year of purchase
 
-kms_driven: Kilometers driven
+- kms_driven: Kilometers driven
 
-fuel_type: Type of fuel used (Petrol/Diesel/CNG/etc.)
+- fuel_type: Type of fuel used (Petrol/Diesel/CNG/etc.)
 
 # 🛠️ Algorithms Used
 Linear Regression
